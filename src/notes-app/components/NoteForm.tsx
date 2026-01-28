@@ -3,7 +3,13 @@ import TextAreaInput from "./inputs/TextAreaInput";
 import TextInput from "./inputs/TextInput";
 import SelectInput from "./inputs/SelectInput";
 
-const NoteForm = ({ notes, setNotes }) => {
+const NoteForm = ({
+    notes,
+    setNotes
+}: {
+    notes: any[];
+    setNotes: (notes: any[]) => void;
+}) => {
     const [formData, setFormData] = useState({
         title: '',
         priority: 'Medium',
@@ -12,14 +18,14 @@ const NoteForm = ({ notes, setNotes }) => {
     });
     const [isFormVisible, setIsFormVisible] = useState(false);
 
-    const handleChange = (e) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         setFormData({
             ...formData,
             [e.target.name]: e.target.value
         });
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
         if (!formData.title || !formData.description) return;

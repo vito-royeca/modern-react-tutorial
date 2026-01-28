@@ -1,4 +1,5 @@
 import Header from "../components/Header";
+
 const HomePage = () => {
     return ( 
         <>
@@ -7,6 +8,7 @@ const HomePage = () => {
                 <h1>Modern React From the Beginning</h1>
                 <ol>
                     <li><a href="/rating-ui">Rating UI</a></li>
+                    <li><a href="/notes-app">Notes App</a></li>
                     <li><a href="/cryptodash">Crypto Dash</a></li>
                     <li><a href="/shopping-cart-ui">Shopping Cart UI</a></li>
                 </ol>

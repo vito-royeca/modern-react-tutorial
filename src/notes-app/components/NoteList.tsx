@@ -1,6 +1,11 @@
-import Note
- from "./Note";
-const NoteList = ({notes, deleteNote}) => {
+import Note from "./Note";
+const NoteList = ({
+    notes,
+    deleteNote
+}: {
+    notes: any[];
+    deleteNote: (id: string) => void;
+}) => {
     if (notes.length === 0) {
         return (
             <p className="text-center text-gray-500">No notes available.</p>
@@ -19,6 +24,5 @@ const NoteList = ({notes, deleteNote}) => {
         </div>
      );
 }
- 
 
 export default NoteList;

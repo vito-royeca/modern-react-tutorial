@@ -1,14 +1,23 @@
 import { useState, useEffect } from "react";
+
+import type { INote } from "./INote.ts";
 import NoteForm from "./components/NoteForm";
 import NoteList from "./components/NoteList";
 
-const App = () => {
+import './style.css';
+
+const NotesApp = () => {
   const [notes, setNotes] = useState(() => {
-    const storedNotes = JSON.parse(localStorage.getItem("notes"));
-    return storedNotes || [];
+    const localStorageNotes = localStorage.getItem("notes");
+
+    if (!localStorageNotes) return [];
+    if (localStorageNotes.length === 0) return [];
+
+    const storedNotes = JSON.parse(localStorageNotes) as INote[] | [];
+    return storedNotes;
   });
 
-  const deleteNote = (id) => {
+  const deleteNote = (id: string) => {
     const confirmDelete = window.confirm("Are you sure you want to delete this note?");
 
     if (confirmDelete) {
@@ -34,5 +43,5 @@ const App = () => {
     </div>
   );
 }
- 
-export default App;
+
+export default NotesApp;

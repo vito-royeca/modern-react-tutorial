@@ -8,6 +8,9 @@ import NotFoundPage from "./pages/not-found"
 // Rating UI
 import RatingUI from "./rating-ui/index"
 
+// Notes App
+import NotesApp from "./notes-app/index"
+
 // Crypto Dash
 import CryptoDash from "./cryptodash/index"
 import CoinDetails from "./cryptodash/components/CoinDetails"
@@ -24,6 +27,9 @@ function App() {
 
         {/* Rating UI */}
         <Route path="/rating-ui" element={<RatingUI />} />
+
+        {/* Notes App */}
+        <Route path="/notes-app" element={<NotesApp />} />
 
         {/* Crypto Dash */}
         <Route path="/cryptodash" element={<CryptoDash />} />

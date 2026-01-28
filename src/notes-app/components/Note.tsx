@@ -1,4 +1,12 @@
-const Note = ({note, deleteNote}) => {
+import type { INote } from "../INote.ts";
+
+const Note = ({
+    note,
+    deleteNote
+}: {
+    note: INote;
+    deleteNote: (id: string) => void;
+}) => {
     return ( 
         <div
             className="p-4 border-l-4 rounded-lg shadow-md bg-white"

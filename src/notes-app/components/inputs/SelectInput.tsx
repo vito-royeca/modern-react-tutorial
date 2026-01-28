@@ -1,4 +1,16 @@
-const SelectInput = ({label, name, value, onChange, options}) => {
+const SelectInput = ({
+    label,
+    name,
+    value,
+    onChange,
+    options
+}: {
+    label: string;
+    name: string;
+    value: string;
+    onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
+    options: { value: string; label: string }[];
+}) => {
     return ( 
         <div className="mb-4">
             <label htmlFor={name} className="block font-semibold">

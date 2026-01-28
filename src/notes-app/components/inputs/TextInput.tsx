@@ -1,4 +1,16 @@
-const TextInput = ({label, name, value, onChange, isRequired = false}) => {
+const TextInput = ({
+    label,
+    name,
+    value,
+    onChange,
+    isRequired = false
+}: {
+    label: string;
+    name: string;
+    value: string;
+    onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+    isRequired?: boolean;
+}) => {
     return ( 
         <div className="mb-4">
             <label htmlFor={name} className='block font-semibold'>
