@@ -14,6 +14,16 @@ const CoinList = ({
     setSortBy,
     loading,
     error
+}: {
+    coins: any[];
+    filter: string;
+    setFilter: (value: string) => void;
+    limit: number;
+    setLimit: (value: number) => void;
+    sortBy: string;
+    setSortBy: (value: string) => void;
+    loading: boolean;
+    error: any;
 }) => {
 
     const filteredCoins = coins.filter((coin) => {

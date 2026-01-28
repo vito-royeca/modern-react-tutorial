@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router';
+import { Route, Routes } from 'react-router';
 
 import Header from '../components/Header';
 import CoinList from './coinList';
-import CoinDetails from './coinDetails';
 
 const API_URL = import.meta.env.VITE_COINS_API_URL;
 
@@ -24,7 +23,7 @@ function CoinGecko() {
         }
         const data = await response.json();
         setCoins(data);
-      } catch (e) {
+      } catch (e: Error | any) {
         setError(e.message);
       } finally {
         setLoading(false);

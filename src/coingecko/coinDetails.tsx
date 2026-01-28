@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router';
 
+import CoinChart from './components/CoinChart';
 import Header from '../components/Header';
 import Spinner from '../components/Spinner';
 
@@ -9,7 +10,7 @@ const API_URL = import.meta.env.VITE_COIN_API_URL;
 
 const CoinDetails = () => {
     const { id } = useParams<{ id: string }>();
-    const [coin, setCoin] = useState(null);
+    const [coin, setCoin] = useState(null as any);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
 
@@ -22,7 +23,7 @@ const CoinDetails = () => {
                 }
                 const data = await response.json();
                 setCoin(data);
-            } catch (e) {
+            } catch (e: Error | any) {
                 setError(e.message);
             } finally {
                 setLoading(false);
@@ -57,7 +58,8 @@ const CoinDetails = () => {
                             <h4>All-Time Low: ${coin.market_data.atl.usd.toLocaleString()} on{' '} { new Date(coin.market_data.atl_date.usd).toLocaleDateString()}</h4>
                             <h4>Last Updated: { new Date(coin.last_updated).toLocaleDateString()}</h4>
                         </div>
-                        <div className="coin-details-lin">
+                        <CoinChart coinId={coin.id} />
+                        <div className="coin-details-links">
                             {coin.links.homepage[0] && (
                                 <p><a href={coin.links.homepage[0]} target="_blank" rel="noopener noreferrer">Official Website</a></p>
                             )}

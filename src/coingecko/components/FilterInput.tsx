@@ -1,4 +1,10 @@
-const FilterInput = ({ filter, onFilterChange }) => {
+const FilterInput = ({
+    filter,
+    onFilterChange
+}: {
+    filter: string;
+    onFilterChange: (value: string) => void;
+}) => {
     return (
         <div className="filter">
             <input

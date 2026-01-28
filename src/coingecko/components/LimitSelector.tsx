@@ -1,4 +1,10 @@
-const LimitSelector = ({ limit, onLimitChange }) => {
+const LimitSelector = ({
+    limit,
+    onLimitChange
+}: {
+    limit: number;
+    onLimitChange: (value: number) => void
+ }) => {
     return (
         <div className="controls">
             <label htmlFor="limit">Show: </label>

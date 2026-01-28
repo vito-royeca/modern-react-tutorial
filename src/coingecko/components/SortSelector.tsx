@@ -1,4 +1,10 @@
-const SortSelector = ({ sortBy, onSortByChange }) => {
+const SortSelector = ({
+    sortBy,
+    onSortByChange
+ }: {
+    sortBy: string;
+    onSortByChange: (value: string) => void
+ }) => {
     return (
         <div className="controls">
             <label htmlFor="limit">Sort By: </label> 

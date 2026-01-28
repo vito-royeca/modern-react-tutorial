@@ -5,12 +5,18 @@ const cssOverride = {
     margin: '0 auto 50px auto',
 };
 
-const Spinner = ({color='blue', size='150'}) => {
+const Spinner = ({
+    color='blue',
+    width=150
+}: {
+    color?: string;
+    width?: number;
+}) => {
     return ( 
         <div>
             <BarLoader 
                 color={color}
-                size={size}
+                width={width}
                 cssOverride={cssOverride}
                 aria-label='Loading...'
             />
