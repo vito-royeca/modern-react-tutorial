@@ -52,7 +52,7 @@ const CoinList = ({
 
     return ( 
         <div>
-            <h1>CoinGecko API</h1>
+            <h1>Crypto Dash</h1>
             { loading && <Spinner color='#fff'/> }
             { error && <div className="error">Error: {error}</div> }
 

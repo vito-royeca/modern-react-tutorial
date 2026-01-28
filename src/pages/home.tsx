@@ -5,9 +5,9 @@ const HomePage = () => {
             <Header />
             <div>
                 <h1>Modern React From the Beginning</h1>
-                <ul>
-                    <li><a href="/coingecko">CoinGecko API</a></li>
-                </ul>
+                <ol>
+                    <li><a href="/cryptodash">Crypto Dash</a></li>
+                </ol>
             </div>
         </>
     );

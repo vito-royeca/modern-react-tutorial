@@ -37,7 +37,7 @@ const CoinDetails = () => {
         <>
             <Header />
             <div className="coin-details-container">
-                <Link to="/coingecko">← Back to Coin List</Link>
+                <Link to="/cryptodash">← Back to Coin List</Link>
                 { loading && <Spinner /> }
                 { error && <div className="error">Error: {error}</div> }
                 { !loading && !error && coin && (

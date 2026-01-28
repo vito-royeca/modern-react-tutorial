@@ -6,7 +6,7 @@ const CoinCard = ({
     coin: any;
 }) => {
     return (
-        <Link to={`/coingecko/${coin.id}`}>
+        <Link to={`/cryptodash/${coin.id}`}>
             <div className="coin-card">
                 <div className="coin-header">
                 <img src={coin.image} alt={coin.name} width="25" height="25" className='coin-image'/>

@@ -6,7 +6,7 @@ import CoinList from './coinList';
 
 const API_URL = import.meta.env.VITE_COINS_API_URL;
 
-function CoinGecko() {
+function CryptoDash() {
   const [coins, setCoins] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -57,4 +57,4 @@ function CoinGecko() {
   )
 }
 
-export default CoinGecko
+export default CryptoDash
