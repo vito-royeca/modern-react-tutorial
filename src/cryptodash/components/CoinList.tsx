@@ -1,8 +1,8 @@
-import CoinCard from './components/CoinCard';
-import FilterInput from './components/FilterInput';
-import LimitSelector from './components/LimitSelector';
-import SortSelector from './components/SortSelector';
-import Spinner from '../components/Spinner';
+import CoinCard from './CoinCard';
+import FilterInput from './FilterInput';
+import LimitSelector from './LimitSelector';
+import SortSelector from './SortSelector';
+import Spinner from '../../components/Spinner';
 
 const CoinList = ({
     coins,

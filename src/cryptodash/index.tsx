@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router';
 
-import './index.css'
+import './style.css'
 import Header from '../components/Header';
-import CoinList from './coinList';
+import CoinList from './components/CoinList';
 
 const API_URL = import.meta.env.VITE_COINS_API_URL;
 

@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router';
 import { Link } from 'react-router';
 
-import CoinChart from './components/CoinChart';
-import Header from '../components/Header';
-import Spinner from '../components/Spinner';
+import CoinChart from './CoinChart';
+import Header from '../../components/Header';
+import Spinner from '../../components/Spinner';
 
 const API_URL = import.meta.env.VITE_COIN_API_URL;
 
