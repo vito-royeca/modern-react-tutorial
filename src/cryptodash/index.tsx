@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router';
 
+import './index.css'
 import Header from '../components/Header';
 import CoinList from './coinList';
 
