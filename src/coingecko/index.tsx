@@ -1,10 +1,11 @@
 import { useEffect, useState } from 'react'
-import { Route, Routes } from 'react-router';
+import { BrowserRouter, Route, Routes } from 'react-router';
 
 import Header from '../components/Header';
-import List from './list';
+import CoinList from './coinList';
+import CoinDetails from './coinDetails';
 
-const API_URL = import.meta.env.VITE_API_URL;
+const API_URL = import.meta.env.VITE_COINS_API_URL;
 
 function CoinGecko() {
   const [coins, setCoins] = useState([]);
@@ -37,22 +38,22 @@ function CoinGecko() {
 
   return (
     <>
-    <Header />
-    <Routes>
-      <Route path="/" element={
-        <List
-            coins={coins}
-            filter={filter}
-            setFilter={setFilter}
-            limit={limit}
-            setLimit={setLimit}
-            sortBy={sortBy}
-            setSortBy={setSortBy}
-            loading={loading}
-            error={error}
-        />
-      }/>
-    </Routes>
+      <Header />
+      <Routes>
+        <Route path="/" element={
+          <CoinList
+              coins={coins}
+              filter={filter}
+              setFilter={setFilter}
+              limit={limit}
+              setLimit={setLimit}
+              sortBy={sortBy}
+              setSortBy={setSortBy}
+              loading={loading}
+              error={error}
+          />
+        }/>        
+      </Routes>
     </>
   )
 }

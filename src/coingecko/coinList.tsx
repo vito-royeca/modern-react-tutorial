@@ -2,8 +2,9 @@ import CoinCard from './components/CoinCard';
 import FilterInput from './components/FilterInput';
 import LimitSelector from './components/LimitSelector';
 import SortSelector from './components/SortSelector';
+import Spinner from '../components/Spinner';
 
-const List = ({
+const CoinList = ({
     coins,
     filter,
     setFilter,
@@ -42,7 +43,7 @@ const List = ({
     return ( 
         <div>
             <h1>CoinGecko API</h1>
-            { loading && <p>Loading...</p> }
+            { loading && <Spinner color='#fff'/> }
             { error && <div className="error">Error: {error}</div> }
 
             <div className="top-controls">
@@ -72,4 +73,4 @@ const List = ({
     );
 }
 
-export default List;
+export default CoinList;
