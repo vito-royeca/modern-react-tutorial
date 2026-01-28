@@ -13,6 +13,10 @@ const Rating = ({
       "Good",
       "Excellent"
     ]
+}: {
+  heading: string;
+  color?: string;
+  feedbackMessages?: string[];
 }) => {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);

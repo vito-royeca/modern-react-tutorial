@@ -1,4 +1,20 @@
-const Star = ({ star, rating, hover, color, ratingClick, hoverEnter, hoverLeave }) => {
+const Star = ({
+    star,
+    rating,
+    hover,
+    color,
+    ratingClick,
+    hoverEnter,
+    hoverLeave
+}: {
+    star: number;
+    rating: number;
+    hover: number;
+    color: string;
+    ratingClick: (star: number) => void;
+    hoverEnter: (star: number) => void;
+    hoverLeave: () => void;
+}) => {
     return (
         <span
             onClick={() => ratingClick(star)}

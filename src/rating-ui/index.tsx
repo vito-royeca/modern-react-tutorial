@@ -1,6 +1,8 @@
 import Rating from './components/Rating';
 
-const App = () => {
+import './style.css';
+
+const RatingUI = () => {
   return (
       <>
         <Rating
@@ -11,4 +13,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default RatingUI;

@@ -1,4 +1,14 @@
-const Button = ({ children, className, onClick, disabled }) => {
+const Button = ({
+    children,
+    className,
+    onClick,
+    disabled
+}: {
+    children: React.ReactNode;
+    className?: string;
+    onClick: () => void;
+    disabled?: boolean;
+}) => {
     return (
         <button
             className={className}

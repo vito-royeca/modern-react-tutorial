@@ -1,6 +1,14 @@
-import Button
- from "./Button";
-const Modal = ({ isOpen, rating, onClose }) => {
+import Button from "./Button";
+
+const Modal = ({
+    isOpen,
+    rating,
+    onClose
+}: {
+    isOpen: boolean;
+    rating: number;
+    onClose: () => void;
+}) => {
     if (!isOpen) return null;
 
     return (

@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 
+import './style.css';
 import Spinner from '../components/Spinner';
 
 const API_URL = import.meta.env.VITE_PRODUCTS_API_URL;

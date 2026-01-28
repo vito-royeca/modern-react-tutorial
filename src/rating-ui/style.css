@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,7 +11,7 @@ body {
   align-items: center;
   height: 100vh;
   background-color: #0080ff;
-}
+} */
 
 .rating-container {
   text-align: center;

@@ -5,9 +5,12 @@ import AboutPage from "./pages/about"
 import HomePage from "./pages/home"
 import NotFoundPage from "./pages/not-found"
 
+// Rating UI
+import RatingUI from "./rating-ui/index"
+
 // Crypto Dash
 import CryptoDash from "./cryptodash/index"
-import CoinDetails from "./cryptodash/coinDetails"
+import CoinDetails from "./cryptodash/components/CoinDetails"
 
 // Shopping Cart UI
 import ShoppingCartUI from "./shopping-cart-ui/index"
@@ -18,6 +21,9 @@ function App() {
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
+
+        {/* Rating UI */}
+        <Route path="/rating-ui" element={<RatingUI />} />
 
         {/* Crypto Dash */}
         <Route path="/cryptodash" element={<CryptoDash />} />
