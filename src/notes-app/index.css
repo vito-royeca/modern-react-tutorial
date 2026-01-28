@@ -1,0 +1,26 @@
+@import 'tailwindcss';
+
+body {
+  @apply bg-purple-900;
+}
+
+.color-box-red {
+    background-color: #FF0000; /* Using a HEX code for red */
+    width: 150px;
+    height: 75px;
+    margin: 10px; /* Adds space around the outside of the box */
+}
+
+.color-box-orange {
+    background-color: rgb(255, 165, 0); /* Using an RGB code for orange */
+    width: 150px;
+    height: 75px;
+    margin: 10px;
+}
+
+.color-box-green {
+    background-color: rgb(0, 128, 0); /* Using an RGB code for green */
+    width: 150px;
+    height: 75px;
+    margin: 10px;
+}
