@@ -1,5 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router"
 
+// Contexts
 import { CartProvider } from "./shopping-cart-ui/context/CartContext"
 import { ProductProvider } from "./shopping-cart-ui/context/ProductContext"
 
@@ -21,39 +22,56 @@ import CoinDetails from "./cryptodash/components/CoinDetails"
 // Shopping Cart UI
 import ShoppingCartUI from "./shopping-cart-ui/index"
 
-function App() {
-   return (
-    <BrowserRouter>
-      <Routes>
-        { /* Pages */ }
-        <Route path="/" element={<HomePage />} />
-        <Route path="/about" element={<AboutPage />} />
+// Content Wrapper
+import ContentWrapper from "./contentWrapper"
 
-        {/* Rating UI */}
-        <Route path="/rating-ui" element={<RatingUI />} />
+const App = () => {
+    return (
+      <BrowserRouter>
+        <Routes>
+          { /* Pages */ }
+          <Route path="/" element={<HomePage />} />
+          <Route path="/about" element={
+            <ContentWrapper content={<AboutPage />} />
+          } />
 
-        {/* Notes App */}
-        <Route path="/notes-app" element={<NotesApp />} />
+          {/* Rating UI */}
+          <Route path="/rating-ui" element={
+            <ContentWrapper content={<RatingUI />} />
+          } />
 
-        {/* Crypto Dash */}
-        <Route path="/cryptodash" element={<CryptoDash />} />
-        <Route path="/cryptodash/:id" element={<CoinDetails />} />
+          {/* Notes App */}
+          <Route path="/notes-app" element={
+            <ContentWrapper content={<NotesApp />} />
+          } />
 
-        {/* Shopping Cart UI */}
-        <Route path="/shopping-cart-ui" element={
-          <ProductProvider>
-            <CartProvider>
-              <ShoppingCartUI />
-            </CartProvider>
-          </ProductProvider>}
-        />
+          {/* Crypto Dash */}
+          <Route path="/cryptodash" element={
+            <ContentWrapper content={<CryptoDash />} />
+          } />
+          <Route path="/cryptodash/:id" element={
+            <ContentWrapper content={<CoinDetails />} />
+          } />
 
-        {/* Not Found */}
-        <Route path="*" element={<NotFoundPage />} />
+          {/* Shopping Cart UI */}
+          <Route path="/shopping-cart-ui" element={
+            <ProductProvider>
+              <CartProvider>
+                <ContentWrapper content={
+                  <ShoppingCartUI />
+                } />
+              </CartProvider>
+            </ProductProvider>}
+          />
 
-      </Routes>
-    </BrowserRouter>
-  )
+          {/* Not Found */}
+          <Route path="*" element={
+            <ContentWrapper content={<NotFoundPage />} />
+          } />
+
+        </Routes>
+      </BrowserRouter>
+    )
 }
 
 export default App

@@ -1,13 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/ico" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Modern React From the Beginning</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+    <head>
+        <title>Modern React From the Beginning</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/ico" href="/favicon.ico" />
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+
+        <!-- Navbar -->
+        <div id="navBar"></div>
+        <script type="module" src="/src/navBar.tsx"></script>
+
+        <!-- Main Content -->
+         <div id="main"></div>
+        <script type="module" src="/src/main.tsx"></script>
+
+        <!-- Quote of the day -->
+        <div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+            <h1 class="w3-margin w3-xlarge">Learning React from the ground up along with modern environments such as React Router v7, TanStack, MERN, etc</h1>
+        </div>
+
+        <!-- Footer -->
+        <footer class="w3-container w3-padding-64 w3-center w3-opacity">  
+            <div class="w3-xlarge w3-padding-32">
+                Source Code available in Git Hub &nbsp;
+                <a href="https://github.com/vito-royeca/modern-react-tutorial" target="_blank">
+                  <i class="fa fa-github w3-hover-opacity"></i>
+                </a>
+            </div>
+            <p>Made with <i class="fa fa-heart"></i> by<br><a href="https://www.vitoroyeca.me" target="_blank"><strong>Vito Royeca</strong></a></p>
+        </footer>
+
+        <script>
+          // Script for side navigation
+          function w3_open() {
+            var x = document.getElementById("mySidebar");
+            x.style.width = "300px";
+            x.style.paddingTop = "10%";
+            x.style.display = "block";
+          }
+
+          // Close side navigation
+          function w3_close() {
+            document.getElementById("mySidebar").style.display = "none";
+          }
+
+          // Used to toggle the menu on smaller screens when clicking on the menu button
+          function openNav() {
+            var x = document.getElementById("navDemo");
+            if (x.className.indexOf("w3-show") == -1) {
+              x.className += " w3-show";
+            } else { 
+              x.className = x.className.replace(" w3-show", "");
+            }
+          }
+        </script>
+    </body>
 </html>

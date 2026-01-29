@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 import { Route, Routes } from 'react-router';
 
 import './style.css'
-import Header from '../components/Header';
 import CoinList from './components/CoinList';
 
 const API_URL = import.meta.env.VITE_COINS_API_URL;
@@ -38,9 +37,9 @@ function CryptoDash() {
 
   return (
     <>
-      <Header />
       <Routes>
         <Route path="/" element={
+          <div className="bg-gray-900 text-white min-h-screen p-6">
           <CoinList
               coins={coins}
               filter={filter}
@@ -52,6 +51,7 @@ function CryptoDash() {
               loading={loading}
               error={error}
           />
+          </div>
         }/>        
       </Routes>
     </>
