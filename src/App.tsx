@@ -1,4 +1,6 @@
 import { BrowserRouter, Route, Routes } from "react-router"
+
+import { CartProvider } from "./shopping-cart-ui/context/CartContext"
 import { ProductProvider } from "./shopping-cart-ui/context/ProductContext"
 
 // Pages
@@ -20,9 +22,10 @@ import CoinDetails from "./cryptodash/components/CoinDetails"
 import ShoppingCartUI from "./shopping-cart-ui/index"
 
 function App() {
-  return (
+   return (
     <BrowserRouter>
       <Routes>
+        { /* Pages */ }
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
 
@@ -39,12 +42,15 @@ function App() {
         {/* Shopping Cart UI */}
         <Route path="/shopping-cart-ui" element={
           <ProductProvider>
-            <ShoppingCartUI />
+            <CartProvider>
+              <ShoppingCartUI />
+            </CartProvider>
           </ProductProvider>}
         />
 
         {/* Not Found */}
         <Route path="*" element={<NotFoundPage />} />
+
       </Routes>
     </BrowserRouter>
   )
