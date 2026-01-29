@@ -1,11 +1,27 @@
 import { createRoot } from 'react-dom/client'
 
 const NavigationBar = () => {
+    // Used to toggle the menu on smaller screens when clicking on the menu button
+    function openNav() {
+        var x = document.getElementById("navDemo");
+        if (x !== null && x !== undefined) {
+            if (x.className.indexOf("w3-show") == -1) {
+                x.className += " w3-show";
+            } else { 
+                x.className = x.className.replace(" w3-show", "");
+            }
+        }
+    }
+
     return ( 
         <>
             <div className="w3-top">
                 <div className="w3-bar w3-red w3-card w3-left-align w3-large">
-                    <a className="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2" href="javascript:void(0);" onClick="openNav()"><i className="fa fa-bars"></i></a>
+                    <a className="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2"
+                        href="javascript:void(0);"
+                        onClick={openNav}>
+                            <i className="fa fa-bars"></i>
+                    </a>
                     <a href="/" className="w3-bar-item w3-button w3-hide-small w3-hover-white"><i className="fa fa-home"></i></a>
                     <a href="/about" className="w3-bar-item w3-button w3-hide-small w3-hover-white">About</a>
                     <div className="w3-dropdown-hover">
