@@ -1,9 +1,11 @@
+import type { INote } from "../INote";
 import Note from "./Note";
+
 const NoteList = ({
     notes,
     deleteNote
 }: {
-    notes: any[];
+    notes: INote[];
     deleteNote: (id: string) => void;
 }) => {
     if (notes.length === 0) {

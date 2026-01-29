@@ -1,4 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router"
+import { ProductProvider } from "./shopping-cart-ui/context/ProductContext"
 
 // Pages
 import AboutPage from "./pages/about"
@@ -36,7 +37,11 @@ function App() {
         <Route path="/cryptodash/:id" element={<CoinDetails />} />
 
         {/* Shopping Cart UI */}
-        <Route path="/shopping-cart-ui" element={<ShoppingCartUI />} />
+        <Route path="/shopping-cart-ui" element={
+          <ProductProvider>
+            <ShoppingCartUI />
+          </ProductProvider>}
+        />
 
         {/* Not Found */}
         <Route path="*" element={<NotFoundPage />} />
