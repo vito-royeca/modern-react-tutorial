@@ -5,12 +5,16 @@ interface CartContextType {
     cart: IProduct[];
     setCart: React.Dispatch<React.SetStateAction<IProduct[]>>;
     addToCart: (product: IProduct) => void;
+    removeFromCart: (productId: number) => void;
+    clearCart: () => void;
 }
 
 const CartContext = createContext<CartContextType>({
     cart: [],
     setCart: () => {},
     addToCart: () => {},
+    removeFromCart: () => {},
+    clearCart: () => {},
 });
 
 const CartProvider = ({ children }: { children: React.ReactNode }) => {
@@ -30,8 +34,16 @@ const CartProvider = ({ children }: { children: React.ReactNode }) => {
         });
     }
 
+    const removeFromCart = (productId: number) => {
+        setCart(prevCart => prevCart.filter(item => item.id !== productId));
+    }
+
+    const clearCart = () => {
+        setCart([]);
+    }
+
     return (
-        <CartContext.Provider value={{ cart, setCart, addToCart }}>
+        <CartContext.Provider value={{ cart, setCart, addToCart, removeFromCart, clearCart }}>
             {children}
         </CartContext.Provider>
     );
