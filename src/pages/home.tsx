@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 
-const Grid = ({ 
+const GridWrapper = ({ 
     title,
     path,
     icon,
@@ -53,7 +53,7 @@ const HomePage = () => {
                 <p className="w3-xlarge">Class Projects</p>
             </header>
 
-            <Grid 
+            <GridWrapper 
                 title="Rating UI"
                 path="/rating-ui"
                 icon="fa-star"
@@ -64,7 +64,7 @@ const HomePage = () => {
                 isIconOnLeft={false}
             />
 
-            <Grid 
+            <GridWrapper 
                 title="Notes App"
                 path="/notes-app"
                 icon="fa-book"
@@ -75,7 +75,18 @@ const HomePage = () => {
                 isIconOnLeft={true}
             />
 
-            <Grid 
+            <GridWrapper 
+                title="Simple Timer"
+                path="/simple-timer"
+                icon="fa-hourglass"
+                text1="Learn about the useRef hook and persisting data across page reloads."
+                text2="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                    laboris nisi ut aliquip ex ea commodo consequat."
+                isIconOnLeft={false}
+            />
+
+            <GridWrapper 
                 title="Crypto Dash"
                 path="/cryptodash"
                 icon="fa-bitcoin"
@@ -83,10 +94,10 @@ const HomePage = () => {
                 text2="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
                     occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                     laboris nisi ut aliquip ex ea commodo consequat."
-                isIconOnLeft={false}
+                isIconOnLeft={true}
             />
 
-            <Grid   
+            <GridWrapper   
                 title="Shopping Cart UI"
                 path="/shopping-cart-ui"
                 icon="fa-shopping-cart"
@@ -94,7 +105,7 @@ const HomePage = () => {
                 text2="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint
                     occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
                     laboris nisi ut aliquip ex ea commodo consequat."
-                isIconOnLeft={true}
+                isIconOnLeft={false}
             />
         </>
     );

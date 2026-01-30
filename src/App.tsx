@@ -9,6 +9,9 @@ import AboutPage from "./pages/about"
 import HomePage from "./pages/home"
 import NotFoundPage from "./pages/not-found"
 
+// Simple Timer
+import SimpleTimer from "./simple-timer/index"
+
 // Rating UI
 import RatingUI from "./rating-ui/index"
 
@@ -23,7 +26,7 @@ import CoinDetails from "./cryptodash/components/CoinDetails"
 import ShoppingCartUI from "./shopping-cart-ui/index"
 
 // Content Wrapper
-import ContentWrapper from "./contentWrapper"
+import ContentWrapper from "./components/ContentWrapper"
 
 const App = () => {
     return (
@@ -33,6 +36,11 @@ const App = () => {
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={
             <ContentWrapper content={<AboutPage />} />
+          } />
+
+          { /* Simple Timer */ }
+          <Route path="/simple-timer" element={
+            <ContentWrapper content={<SimpleTimer />} />
           } />
 
           {/* Rating UI */}

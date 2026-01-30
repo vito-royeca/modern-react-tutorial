@@ -29,6 +29,7 @@ const NavigationBar = () => {
                         <div className="w3-dropdown-content w3-card-4 w3-bar-block">
                             <a href="/rating-ui" className="w3-bar-item w3-button">Rating UI</a>
                             <a href="/notes-app" className="w3-bar-item w3-button">Notes App</a>
+                            <a href="/simple-timer" className="w3-bar-item w3-button">Simple Timer</a>
                             <a href="/cryptodash" className="w3-bar-item w3-button">Crypto Dash</a>
                             <a href="/shopping-cart-ui" className="w3-bar-item w3-button">Shopping Cart UI</a>
                         </div>

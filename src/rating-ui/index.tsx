@@ -1,5 +1,4 @@
 import Rating from './components/Rating';
-
 import './style.css';
 
 const RatingUI = () => {

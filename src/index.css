@@ -4,8 +4,8 @@ body,h1,h2,h3,h4,h5,h6 {
 .w3-bar,h1,button {
   font-family: "Montserrat", sans-serif
 }
-.fa-star,.fa-book,.fa-bitcoin,.fa-shopping-cart {
-  font-size:200px
+.fa-star,.fa-bitcoin,.fa-book,.fa-hourglass,.fa-shopping-cart {
+  font-size:100px
 }
 
 /* * {
