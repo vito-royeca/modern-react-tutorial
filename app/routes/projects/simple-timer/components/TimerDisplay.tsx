@@ -4,7 +4,7 @@ const TimerDisplay = ({
     time: number
 }) => {
     return ( 
-        <h2 className="text-4xl font-semibold mt-4">
+        <h2 className="text-4xl font-semibold mt-4 text-blue-600">
             Time: { time }
         </h2>
     );

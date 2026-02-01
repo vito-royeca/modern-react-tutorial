@@ -1,9 +1,10 @@
+import ContentWrapper from '../components/ContentWrapper'
+
 const AboutPage = () => {
     return ( 
-        <div>
+        <ContentWrapper>
             <h1>About</h1>
-            
-        </div>
+        </ContentWrapper>
      );
 }
  

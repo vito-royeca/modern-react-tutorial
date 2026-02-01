@@ -38,7 +38,7 @@ const Rating = ({
 
   return (
     <div className="rating-container">
-      <h2>{heading}</h2>
+      <h2 className="text-xl font-bold text-blue-600">{heading}</h2>
       <div className="stars">
         {stars.map((star) => (
             <Star

@@ -15,7 +15,7 @@ const Modal = ({
         <div className="modal-overlay">
             <div className="modal">
                 <h2>Thank you for your feedback!</h2>
-                <p>Your rating is {rating} star{rating > 1 ? 's' : ''}</p>
+                <p className="text-sm text-gray-600">Your rating is {rating} star{rating > 1 ? 's' : ''}</p>
                 <Button
                     className="close-btn"
                     onClick={onClose}

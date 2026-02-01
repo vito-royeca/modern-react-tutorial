@@ -19,11 +19,12 @@ const NavigationBar = () => {
         <>
             <div className="w3-top">
                 <div className="w3-bar w3-red w3-card w3-left-align w3-large">
-                    <a className="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2"
-                        href="javascript:void(0);"
+                    <Link
+                        to="javascript:void(0);"
+                        className="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2"
                         onClick={openNav}>
                             <i className="fa fa-bars"></i>
-                    </a>
+                    </Link>
                     <Link
                         to="/"
                         className="w3-bar-item w3-button w3-hide-small w3-hover-white">
@@ -36,7 +37,11 @@ const NavigationBar = () => {
                     </Link>
 
                     <div className="w3-dropdown-hover">
-                        <button className="w3-button" title="Notifications">Projects <i className="fa fa-caret-down"></i></button>     
+                        <button
+                            className="w3-button"
+                            title="Notifications">
+                                Projects <i className="fa fa-caret-down"></i>
+                        </button>     
                         <div className="w3-dropdown-content w3-card-4 w3-bar-block">
                             <Link 
                                 to='/rating-ui'
@@ -68,7 +73,9 @@ const NavigationBar = () => {
                 </div>
 
                 {/* Navbar on small screens */}
-                <div id="navDemo" className="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+                <div
+                    id="navDemo"
+                    className="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
                     <Link
                         to="/"
                         className="w3-bar-item w3-button">

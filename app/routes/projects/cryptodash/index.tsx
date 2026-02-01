@@ -34,7 +34,7 @@ function CryptoDash() {
     }, [limit, sortBy]);
 
     return (
-        <ContentWrapper content={  
+        <ContentWrapper>
             <div className="bg-gray-900 text-white min-h-screen p-6">
                 <CoinList
                     coins={coins}
@@ -48,7 +48,7 @@ function CryptoDash() {
                     error={error}
                 />
             </div>
-        } />
+        </ContentWrapper>
   )
 }
 

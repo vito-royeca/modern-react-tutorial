@@ -46,9 +46,9 @@ const NoteForm = ({
     }
      
     return (
-        <>
+        <div className="mb-4">
             <button
-                className="w-full bg-gray-100 border border-gray-300 text-purple-800 py-2 rounded-lg cursor-pointer hover:bg-purple-200 hover:border-purple-300 transition-colors mb-4"
+                className="w-full bg-gray-100 border border-gray-300 text-purple-800 py-2 rounded-lg cursor-pointer hover:bg-purple-200 hover:border-purple-300 transition-colors"
                 onClick={() => setIsFormVisible(!isFormVisible)}>
                 {isFormVisible ? 'Hide Form' : 'Add New Note'}
             </button>
@@ -98,7 +98,7 @@ const NoteForm = ({
                     </button>
                 </form>
             )}
-        </>
+        </div>
     );
 }
  

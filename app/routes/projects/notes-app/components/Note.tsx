@@ -15,7 +15,7 @@ const Note = ({
                                     note.priority === 'Medium' ? 'orange' :
                                     'green'  
             }}>
-            <h3 className="text-lg font-bold">{note.title}</h3>
+            <h3 className="text-lg font-bold text-gray-600">{note.title}</h3>
             <p className="text-sm text-gray-600">
                 <strong>Priority:</strong> {note.priority}
             </p>

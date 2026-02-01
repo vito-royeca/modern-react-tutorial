@@ -13,15 +13,13 @@ const ShoppingCartUI = () => {
     return (
         <ProductProvider>
             <CartProvider>
-                <ContentWrapper content={
-                    <>
-                        <Header />
-                        <div className='min-h-screen p-6 bg-gray-100'>
-                            <h1 className="text-3xl font-bold mb-6">Product Catalog</h1>
-                            <ProductList />
-                        </div>
-                    </>
-                } />
+                <ContentWrapper>
+                    <Header />
+                    <div className='min-h-screen p-6 bg-gray-100'>
+                        <h1 className="text-3xl font-bold mb-6">Product Catalog</h1>
+                        <ProductList />
+                    </div>
+                </ContentWrapper>
             </CartProvider>
         </ProductProvider>
     );
