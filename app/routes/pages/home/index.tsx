@@ -1,4 +1,4 @@
-import GridWrapper from "../components/GridWrapper";
+import GridWrapper from "../../components/GridWrapper";
 
 function HomePage() {
   return (

@@ -39,12 +39,12 @@ type RouteFiles = {
     id: "root";
     page: "/" | "/about" | "/rating-ui" | "/notes-app" | "/simple-timer" | "/cryptodash" | "/shopping-cart-ui";
   };
-  "routes/home/index.tsx": {
-    id: "routes/home/index";
+  "routes/pages/home/index.tsx": {
+    id: "routes/pages/home/index";
     page: "/";
   };
-  "./routes/about/index.tsx": {
-    id: "routes/about/index";
+  "./routes/pages/about/index.tsx": {
+    id: "routes/pages/about/index";
     page: "/about";
   };
   "./routes/projects/rating-ui/index.tsx": {
@@ -71,8 +71,8 @@ type RouteFiles = {
 
 type RouteModules = {
   "root": typeof import("./app/root.tsx");
-  "routes/home/index": typeof import("./app/routes/home/index.tsx");
-  "routes/about/index": typeof import("./app/./routes/about/index.tsx");
+  "routes/pages/home/index": typeof import("./app/routes/pages/home/index.tsx");
+  "routes/pages/about/index": typeof import("./app/./routes/pages/about/index.tsx");
   "routes/projects/rating-ui/index": typeof import("./app/./routes/projects/rating-ui/index.tsx");
   "routes/projects/notes-app/index": typeof import("./app/./routes/projects/notes-app/index.tsx");
   "routes/projects/simple-timer/index": typeof import("./app/./routes/projects/simple-timer/index.tsx");
