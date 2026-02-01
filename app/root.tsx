@@ -10,14 +10,14 @@ import {
 import type { Route } from "./+types/root";
 
 import "./app.css";
-import NavigationBar from "./routes/navBar";
-import Quote from "./routes/quote";
-import Footer from "./routes/footer";
+import NavigationBar from "./routes/components/NavigationBar";
+import Quote from "./routes/components/Quote";
+import Footer from "./routes/components/Footer";
 
 export function meta({}: Route.MetaArgs) {
     return [
         { 
-            title: "Modern React From the Beginning"
+            title: "Modern React From the Beginning - Class Projects"
         }, 
         { 
             name: "description",

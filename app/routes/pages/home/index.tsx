@@ -1,8 +1,17 @@
 import GridWrapper from "../../components/GridWrapper";
 
 function HomePage() {
-  return (
-      <main>
+    const now = new Date().toISOString();
+
+    if (typeof window === 'undefined') {
+        console.log('Server Render at:', now);
+    } else {
+        console.log('Client Hydration at:', now);
+    }
+    // console.log(window.scrollX);
+
+    return (
+        <main>
             <header className="w3-container w3-red w3-center" style={{padding: '64px 16px'}}>
                 <h1 className="w3-margin w3-jumbo">Modern React From the Beginning</h1>
                 <p className="w3-xlarge">Class Projects</p>
