@@ -1,34 +1,25 @@
 
-import { Link } from "react-router";
+import { useState } from 'react'
+import { Link } from 'react-router';
+import { FaBars, FaCaretDown, FaHome } from 'react-icons/fa';
 
 const NavigationBar = () => {
-    // Used to toggle the menu on smaller screens when clicking on the menu button
-    function openNav() {
-        let x = document.getElementById("navDemo");
-
-        if (x !== null && x !== undefined) {
-            if (x.className.indexOf("w3-show") == -1) {
-                x.className += " w3-show";
-            } else { 
-                x.className = x.className.replace(" w3-show", "");
-            }
-        }
-    }
+    const [projectsNavOpen, setProjectsNavOpen] = useState(false);
+    const [smallNavOpen, setSmallNavOpen] = useState(false);
 
     return ( 
-        <>
+        <nav>
             <div className="w3-top">
                 <div className="w3-bar w3-red w3-card w3-left-align w3-large">
-                    <Link
-                        to="javascript:void(0);"
+                    <button
                         className="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-theme-d2"
-                        onClick={openNav}>
-                            <i className="fa fa-bars"></i>
-                    </Link>
+                        onClick={() => setSmallNavOpen(!smallNavOpen)}>
+                        <FaBars className='fa'/>
+                    </button>
                     <Link
                         to="/"
                         className="w3-bar-item w3-button w3-hide-small w3-hover-white">
-                            <i className="fa fa-home"></i>
+                            <FaHome className='fa'/>
                     </Link>
                     <Link
                         to="/about"
@@ -38,9 +29,8 @@ const NavigationBar = () => {
 
                     <div className="w3-dropdown-hover">
                         <button
-                            className="w3-button"
-                            title="Notifications">
-                                Projects <i className="fa fa-caret-down"></i>
+                            className="w3-button">
+                            Projects <FaCaretDown className='fa' />
                         </button>     
                         <div className="w3-dropdown-content w3-card-4 w3-bar-block">
                             <Link 
@@ -74,21 +64,22 @@ const NavigationBar = () => {
 
                 {/* Navbar on small screens */}
                 <div
-                    id="navDemo"
-                    className="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large">
+                    className={`w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium w3-large${smallNavOpen ? ' w3-show' : ''}`}>
                     <Link
                         to="/"
-                        className="w3-bar-item w3-button">
+                        className="w3-bar-item w3-button"
+                        onClick={() => setSmallNavOpen(!smallNavOpen)}>
                             Home
                     </Link>
                     <Link
                         to="/about"
-                        className="w3-bar-item w3-button">
+                        className="w3-bar-item w3-button"
+                        onClick={() => setSmallNavOpen(!smallNavOpen)}>
                             About
                     </Link>
                 </div>
             </div>
-        </>
+        </nav>
      );
 }
 
