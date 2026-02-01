@@ -1,0 +1,11 @@
+const Quote = ({
+    quote
+}: { quote: string }) => {
+    return ( 
+        <div className="w3-container w3-black w3-center w3-opacity w3-padding-64">
+            <h1 className="w3-margin w3-xlarge">{quote}</h1>
+        </div>
+    );
+}
+ 
+export default Quote;
