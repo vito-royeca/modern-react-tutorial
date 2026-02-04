@@ -51,13 +51,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </head>
           <body>
               <NavigationBar />
+              <main>
+                  {children}
 
-              {children}
-
-              <Quote 
-                quote="Learning React from the ground up along with modern environments such as React Router v7, TanStack, MERN, etc."
-              />
+                  <Quote 
+                      quote="Learning React from the ground up along with modern environments such as React Router v7, TanStack, MERN, etc."
+                  />
+              </main>
               <Footer />
+              
               <ScrollRestoration />
               <Scripts />
           </body>

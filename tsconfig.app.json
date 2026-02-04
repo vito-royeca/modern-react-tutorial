@@ -23,6 +23,5 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
-  },
-  "include": ["src", "app/routes/navBar.tsx", "app/routes/about/index.tsx"]
+  }
 }

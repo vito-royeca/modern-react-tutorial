@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 
 import './style.css'
 import CoinList from './components/CoinList';
-import ContentWrapper from '~/routes/components/ContentWrapper';
 
 const API_URL = import.meta.env.VITE_COINS_API_URL;
 
@@ -34,7 +33,7 @@ function CryptoDash() {
     }, [limit, sortBy]);
 
     return (
-        <ContentWrapper>
+        <>
             <div className="bg-gray-900 text-white min-h-screen p-6">
                 <CoinList
                     coins={coins}
@@ -48,7 +47,7 @@ function CryptoDash() {
                     error={error}
                 />
             </div>
-        </ContentWrapper>
+        </>
   )
 }
 
