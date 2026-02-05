@@ -17,7 +17,11 @@ const CartContext = createContext<CartContextType>({
     clearCart: () => {},
 });
 
-const CartProvider = ({ children }: { children: React.ReactNode }) => {
+const CartProvider = ({
+    children
+ }: {
+    children: React.ReactNode
+ }) => {
     const [cart, setCart] = useState<IProduct[]>(() => {
         const localStorageCart = localStorage.getItem("cart");
 

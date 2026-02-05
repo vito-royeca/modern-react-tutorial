@@ -3,7 +3,13 @@ import Button from "./Button";
 import Modal from "./Modal";
 import Star from "./Star";
 
-const Rating = ({
+type RatingProps = {
+  heading: string;
+  color?: string;
+  feedbackMessages?: string[];
+};
+
+const Rating: React.FC<RatingProps> = ({
     heading,
     color='gold',
     feedbackMessages = [
@@ -13,10 +19,6 @@ const Rating = ({
       "Good",
       "Excellent"
     ]
-}: {
-  heading: string;
-  color?: string;
-  feedbackMessages?: string[];
 }) => {
   const [rating, setRating] = useState(0);
   const [hover, setHover] = useState(0);

@@ -1,15 +1,17 @@
-const TextInput = ({
-    label,
-    name,
-    value,
-    onChange,
-    isRequired = false
-}: {
+type TextInputProps = {
     label: string;
     name: string;
     value: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     isRequired?: boolean;
+};
+
+const TextInput: React.FC<TextInputProps> = ({
+    label,
+    name,
+    value,
+    onChange,
+    isRequired = false
 }) => {
     return ( 
         <div className="mb-4">

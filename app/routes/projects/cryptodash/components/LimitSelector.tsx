@@ -1,10 +1,12 @@
-const LimitSelector = ({
-    limit,
-    onLimitChange
-}: {
+type LimitSelectorProps = {
     limit: number;
     onLimitChange: (value: number) => void
- }) => {
+ };
+
+const LimitSelector: React.FC<LimitSelectorProps> = ({
+    limit,
+    onLimitChange
+}) => {
     return (
         <div className="controls">
             <label htmlFor="limit">Show: </label>

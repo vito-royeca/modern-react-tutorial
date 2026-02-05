@@ -3,12 +3,14 @@ import TextAreaInput from "./inputs/TextAreaInput";
 import TextInput from "./inputs/TextInput";
 import SelectInput from "./inputs/SelectInput";
 
-const NoteForm = ({
-    notes,
-    setNotes
-}: {
+type NoteFormProps = {
     notes: any[];
     setNotes: (notes: any[]) => void;
+};
+
+const NoteForm: React.FC<NoteFormProps> = ({
+    notes,
+    setNotes
 }) => {
     const [formData, setFormData] = useState({
         title: '',

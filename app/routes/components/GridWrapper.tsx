@@ -1,19 +1,21 @@
 import { Link } from "react-router";
 
-const GridWrapper = ({ 
-    title,
-    path,
-    icon,
-    text1,
-    text2,
-    isIconOnLeft
-}: {
+type GridWrapperProps = {
     title: string;
     path: string;
     icon: string;
     text1: string;
     text2: string;
     isIconOnLeft: boolean;
+};
+
+const GridWrapper: React.FC<GridWrapperProps> = ({ 
+    title,
+    path,
+    icon,
+    text1,
+    text2,
+    isIconOnLeft
 }) => {
     return (
         <div className={`w3-row-padding ${isIconOnLeft ? 'w3-light-grey' : ''} w3-padding-64 w3-container`}>

@@ -1,7 +1,7 @@
 type HeroProps = {
     title?: string,
     subtitle?: string
-}
+};
 
 const Hero: React.FC<HeroProps> = ({
     title = "[TITLE]",

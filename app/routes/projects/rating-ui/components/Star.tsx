@@ -1,12 +1,4 @@
-const Star = ({
-    star,
-    rating,
-    hover,
-    color,
-    ratingClick,
-    hoverEnter,
-    hoverLeave
-}: {
+type StarProps = {
     star: number;
     rating: number;
     hover: number;
@@ -14,6 +6,16 @@ const Star = ({
     ratingClick: (star: number) => void;
     hoverEnter: (star: number) => void;
     hoverLeave: () => void;
+};
+
+const Star: React.FC<StarProps> = ({
+    star,
+    rating,
+    hover,
+    color,
+    ratingClick,
+    hoverEnter,
+    hoverLeave
 }) => {
     return (
         <span

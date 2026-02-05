@@ -1,9 +1,11 @@
-const FilterInput = ({
-    filter,
-    onFilterChange
-}: {
+type FilterInputProps = {
     filter: string;
     onFilterChange: (value: string) => void;
+};
+
+const FilterInput: React.FC<FilterInputProps> = ({
+    filter,
+    onFilterChange
 }) => {
     return (
         <div className="filter">

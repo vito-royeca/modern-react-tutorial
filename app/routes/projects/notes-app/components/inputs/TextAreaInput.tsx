@@ -1,15 +1,17 @@
-const TextAreaInput = ({
-    label,
-    name,
-    value,
-    onChange,
-    isRequired=false
-}: {
+type TextAreaInputProps = {
     label: string;
     name: string;
     value: string;
     onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void;
     isRequired?: boolean;
+};
+
+const TextAreaInput: React.FC<TextAreaInputProps> = ({
+    label,
+    name,
+    value,
+    onChange,
+    isRequired=false
 }) => {
     return ( 
         <div className="mb-4">

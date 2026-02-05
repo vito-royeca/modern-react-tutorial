@@ -4,17 +4,7 @@ import LimitSelector from './LimitSelector';
 import SortSelector from './SortSelector';
 // import Spinner from '../../../components/Spinner';
 
-const CoinList = ({
-    coins,
-    filter,
-    setFilter,
-    limit,
-    setLimit,
-    sortBy,
-    setSortBy,
-    loading,
-    error
-}: {
+type CoinListProps = {
     coins: any[];
     filter: string;
     setFilter: (value: string) => void;
@@ -24,6 +14,18 @@ const CoinList = ({
     setSortBy: (value: string) => void;
     loading: boolean;
     error: any;
+};
+
+const CoinList: React.FC<CoinListProps> = ({
+    coins,
+    filter,
+    setFilter,
+    limit,
+    setLimit,
+    sortBy,
+    setSortBy,
+    loading,
+    error
 }) => {
 
     const filteredCoins = coins.filter((coin) => {

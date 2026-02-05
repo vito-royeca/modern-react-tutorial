@@ -1,12 +1,14 @@
 import type { INote } from "../INote";
 import Note from "./Note";
 
-const NoteList = ({
-    notes,
-    deleteNote
-}: {
+type NoteListProps = {
     notes: INote[];
     deleteNote: (id: string) => void;
+};
+
+const NoteList: React.FC<NoteListProps> = ({
+    notes,
+    deleteNote
 }) => {
     if (notes.length === 0) {
         return (

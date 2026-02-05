@@ -15,7 +15,11 @@ const ProductContext = createContext<ProductContextType>({
     error: null,
 });
 
-const ProductProvider = ({ children }: { children: React.ReactNode }) => {
+const ProductProvider = ({
+    children
+}: {
+    children: React.ReactNode
+}) => {
     const [products, setProducts] = useState<IProduct[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);

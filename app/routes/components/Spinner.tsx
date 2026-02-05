@@ -8,12 +8,14 @@ const cssOverride = {
     margin: '0 auto 50px auto',
 };
 
-const Spinner = ({
-    color='blue',
-    width=150
-}: {
+type SpinnerProps = {
     color?: string;
     width?: number;
+};
+
+const Spinner: React.FC<SpinnerProps> = ({
+    color='blue',
+    width=150
 }) => {
     return ( 
         <div>

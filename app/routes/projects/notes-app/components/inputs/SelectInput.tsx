@@ -1,15 +1,17 @@
-const SelectInput = ({
-    label,
-    name,
-    value,
-    onChange,
-    options
-}: {
+type SelectInputProps = {
     label: string;
     name: string;
     value: string;
     onChange: (e: React.ChangeEvent<HTMLSelectElement>) => void;
     options: { value: string; label: string }[];
+}
+
+const SelectInput: React.FC<SelectInputProps> = ({
+    label,
+    name,
+    value,
+    onChange,
+    options
 }) => {
     return ( 
         <div className="mb-4">

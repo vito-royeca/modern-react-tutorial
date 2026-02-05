@@ -1,9 +1,13 @@
 import type { IProduct } from "../IProduct.ts";
 import { useCart } from "../context/CartContext";
 
-const ProductCard = ({
+type ProductCardProps = { 
+    product: IProduct
+};
+
+const ProductCard: React.FC<ProductCardProps> = ({
     product
-}: { product: IProduct }) => {
+}) => {
     const { addToCart } = useCart();
 
     return ( 

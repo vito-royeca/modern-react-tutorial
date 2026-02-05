@@ -1,9 +1,11 @@
-const SortSelector = ({
-    sortBy,
-    onSortByChange
- }: {
+type SortSelectorProps = {
     sortBy: string;
     onSortByChange: (value: string) => void
+ };
+
+const SortSelector: React.FC<SortSelectorProps> = ({
+    sortBy,
+    onSortByChange
  }) => {
     return (
         <div className="controls">

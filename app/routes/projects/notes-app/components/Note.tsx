@@ -1,11 +1,13 @@
 import type { INote } from "../INote.ts";
 
-const Note = ({
-    note,
-    deleteNote
-}: {
+type NoteProps = {
     note: INote;
     deleteNote: (id: string) => void;
+};
+
+const Note: React.FC<NoteProps> = ({
+    note,
+    deleteNote
 }) => {
     return ( 
         <div

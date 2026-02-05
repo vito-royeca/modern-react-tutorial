@@ -1,13 +1,15 @@
 import Button from "./Button";
 
-const Modal = ({
-    isOpen,
-    rating,
-    onClose
-}: {
+type ModalProps = {
     isOpen: boolean;
     rating: number;
     onClose: () => void;
+};
+
+const Modal: React.FC<ModalProps> = ({
+    isOpen,
+    rating,
+    onClose
 }) => {
     if (!isOpen) return null;
 

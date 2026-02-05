@@ -1,13 +1,15 @@
 import { useEffect, useRef } from 'react';
 
-const TimerControls = ({ 
-    isRunning,
-    onToggle,
-    onReset
-}: {
+type TimerControlProps = {
     isRunning: boolean;
     onToggle: () => void;
     onReset: () => void;
+};
+
+const TimerControls: React.FC<TimerControlProps> = ({ 
+    isRunning,
+    onToggle,
+    onReset
 }) => {
     const startButtonRef = useRef(null);
 
