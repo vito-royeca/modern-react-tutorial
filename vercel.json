@@ -1,14 +1,8 @@
 {
-  "functions": {
-    "server/server.cjs": {
-      "memory": 1024,
-      "includeFiles": "db.json"
-    }
-  },
   "rewrites": [
     { 
       "source": "/(.*)",
-      "destination": "server/server.cjs"
+      "destination": "/"
     }
   ]
 }
