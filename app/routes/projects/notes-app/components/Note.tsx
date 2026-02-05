@@ -22,7 +22,7 @@ const Note = ({
             <p className="text-sm text-gray-600">
                 <strong>Category:</strong> {note.category}
             </p>
-            <p className="mt-2">{note.description}</p>
+            <p className="mt-2 text-gray-600">{note.description}</p>
 
             <button
                 onClick={() => deleteNote(note.id)}

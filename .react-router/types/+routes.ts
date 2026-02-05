@@ -29,15 +29,28 @@ type Pages = {
   "/cryptodash": {
     params: {};
   };
+  "/cryptodash/:id": {
+    params: {
+      "id": string;
+    };
+  };
   "/shopping-cart-ui": {
     params: {};
+  };
+  "/portfolio": {
+    params: {};
+  };
+  "/portfolio/:id": {
+    params: {
+      "id": string;
+    };
   };
 };
 
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/about" | "/rating-ui" | "/notes-app" | "/simple-timer" | "/cryptodash" | "/shopping-cart-ui";
+    page: "/" | "/about" | "/rating-ui" | "/notes-app" | "/simple-timer" | "/cryptodash" | "/cryptodash/:id" | "/shopping-cart-ui" | "/portfolio" | "/portfolio/:id";
   };
   "./routes/layouts/home.tsx": {
     id: "routes/layouts/home";
@@ -57,7 +70,7 @@ type RouteFiles = {
   };
   "./routes/layouts/project.tsx": {
     id: "routes/layouts/project";
-    page: "/rating-ui" | "/notes-app" | "/simple-timer" | "/cryptodash" | "/shopping-cart-ui";
+    page: "/rating-ui" | "/notes-app" | "/simple-timer" | "/cryptodash" | "/cryptodash/:id" | "/shopping-cart-ui" | "/portfolio" | "/portfolio/:id";
   };
   "./routes/projects/rating-ui/index.tsx": {
     id: "routes/projects/rating-ui/index";
@@ -75,9 +88,21 @@ type RouteFiles = {
     id: "routes/projects/cryptodash/index";
     page: "/cryptodash";
   };
+  "./routes/projects/cryptodash/components/CoinDetails.tsx": {
+    id: "routes/projects/cryptodash/components/CoinDetails";
+    page: "/cryptodash/:id";
+  };
   "./routes/projects/shopping-cart-ui/index.tsx": {
     id: "routes/projects/shopping-cart-ui/index";
     page: "/shopping-cart-ui";
+  };
+  "./routes/projects/portfolio/index.tsx": {
+    id: "routes/projects/portfolio/index";
+    page: "/portfolio";
+  };
+  "./routes/projects/portfolio/details.tsx": {
+    id: "routes/projects/portfolio/details";
+    page: "/portfolio/:id";
   };
 };
 
@@ -92,5 +117,8 @@ type RouteModules = {
   "routes/projects/notes-app/index": typeof import("./app/./routes/projects/notes-app/index.tsx");
   "routes/projects/simple-timer/index": typeof import("./app/./routes/projects/simple-timer/index.tsx");
   "routes/projects/cryptodash/index": typeof import("./app/./routes/projects/cryptodash/index.tsx");
+  "routes/projects/cryptodash/components/CoinDetails": typeof import("./app/./routes/projects/cryptodash/components/CoinDetails.tsx");
   "routes/projects/shopping-cart-ui/index": typeof import("./app/./routes/projects/shopping-cart-ui/index.tsx");
+  "routes/projects/portfolio/index": typeof import("./app/./routes/projects/portfolio/index.tsx");
+  "routes/projects/portfolio/details": typeof import("./app/./routes/projects/portfolio/details.tsx");
 };

@@ -58,6 +58,11 @@ const NavigationBar = () => {
                                 className='w3-bar-item w3-button'>
                                 Shopping Cart UI
                             </Link>
+                            <Link 
+                                to='/portfolio'
+                                className='w3-bar-item w3-button'>
+                                Portfolio
+                            </Link>
                         </div>
                     </div>
                 </div>

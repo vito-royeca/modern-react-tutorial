@@ -32,7 +32,7 @@ const GridWrapper = ({
                         </Link>
                     </h1>
                     <h5 className="w3-padding-32">{text1}</h5>
-                    <p className="w3-text-grey">{text2}</p>
+                    {/* <p className="w3-text-grey">{text2}</p> */}
                 </div>
 
                 {!isIconOnLeft && (

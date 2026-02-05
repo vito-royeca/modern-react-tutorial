@@ -1,9 +1,11 @@
-const Hero = ({
-    title,
-    subtitle
-}: {
-    title: string,
-    subtitle: string
+type HeroProps = {
+    title?: string,
+    subtitle?: string
+}
+
+const Hero: React.FC<HeroProps> = ({
+    title = "[TITLE]",
+    subtitle = "[SUBTITLE]"
 }) => {
     return ( 
         <header className="w3-container w3-red w3-center" style={{padding: '64px 16px'}}>

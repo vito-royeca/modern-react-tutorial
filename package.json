@@ -9,7 +9,8 @@
     "lint": "eslint .",
     "start": "react-router-serve ./build/server/index.js",
     "typecheck": "react-router typegen && tsc",
-    "json-server": "json-server --watch src/shopping-cart-ui/data/db.json --port 8000"
+    "shoppingcart-server": "json-server --watch app/routes/projects/shopping-cart-ui/data/db.json --port 8000",
+    "portfolio-server": "json-server --watch app/routes/projects/portfolio/data/db.json --port 8001"
   },
   "dependencies": {
     "@react-router/node": "7.12.0",
