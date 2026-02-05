@@ -7,7 +7,7 @@ const AboutPage = () => {
             <h1>About</h1>
             <div className="w3-content">
                 <p className="text-gray-500 p-2">
-                    This is the class projects for the Udemy online course:&nbsp;
+                    This are the completed class projects for the Udemy online course:&nbsp;
                     <Link
                         to='https://www.udemy.com/course/modern-react-from-the-beginning/'
                         className="underline text-blue-600 hover:text-blue-800 visited:text-purple-600"
