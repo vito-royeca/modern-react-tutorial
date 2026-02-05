@@ -8,7 +8,7 @@ import ProjectCard from "./components/ProjectCard";
 export async function loader({
     request
 }: Route.LoaderArgs):Promise<{projects: IProject[]}> {
-    const response = await fetch('http://localhost:8001/projects');
+    const response = await fetch('http://localhost:8000/projects');
     const data = await response.json();
 
     return { projects: data };

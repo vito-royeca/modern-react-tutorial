@@ -32,7 +32,6 @@ const ProductProvider = ({
                     throw new Error('Network response was not ok');
                 }
                 const data = await response.json();
-                console.log(data);
                 setProducts(data);
             } catch (e: Error | any) {
                 setError(e.message);
@@ -46,7 +45,7 @@ const ProductProvider = ({
 
     return (
         <ProductContext.Provider value={{ products, loading, error, setProducts }}>
-            {children}
+            { children }
         </ProductContext.Provider>
     );
 };

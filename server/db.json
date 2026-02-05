@@ -1,0 +1,136 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Wireless Headphones",
+      "description": "Noise-cancelling headphones with deep bass and Bluetooth 5.0 support.",
+      "price": 59.99,
+      "quantity": 25,
+      "category": "Audio",
+      "rating": 4.5,
+      "image": "images/product-1.png"
+    },
+    {
+      "id": 2,
+      "name": "Bluetooth Speaker",
+      "description": "Portable speaker with crisp sound and 12-hour battery life.",
+      "price": 39.99,
+      "quantity": 40,
+      "category": "Audio",
+      "rating": 4.2,
+      "image": "images/product-2.png"
+    },
+    {
+      "id": 3,
+      "name": "Smartwatch",
+      "description": "Track fitness, receive notifications, and monitor your health stats.",
+      "price": 99.99,
+      "quantity": 15,
+      "category": "Wearables",
+      "rating": 4.7,
+      "image": "images/product-3.png"
+    },
+    {
+      "id": 4,
+      "name": "Gaming Mouse",
+      "description": "Ergonomic mouse with customizable RGB lighting and 6 DPI levels.",
+      "price": 29.99,
+      "quantity": 50,
+      "category": "Accessories",
+      "rating": 4.3,
+      "image": "images/product-4.png"
+    },
+    {
+      "id": 5,
+      "name": "Mechanical Keyboard",
+      "description": "Tactile mechanical keys with a sleek aluminum frame.",
+      "price": 89.99,
+      "quantity": 30,
+      "category": "Accessories",
+      "rating": 4.8,
+      "image": "images/product-5.png"
+    },
+    {
+      "id": 6,
+      "name": "USB-C Hub",
+      "description": "Multiport adapter with HDMI, USB 3.0, and SD card support.",
+      "price": 24.99,
+      "quantity": 100,
+      "category": "Adapters",
+      "rating": 4.1,
+      "image": "images/product-6.png"
+    }
+  ],
+  "projects": [
+    {
+      "id": 1,
+      "title": "DevDash",
+      "description": "A productivity dashboard for developers to track tasks, goals, and inspiration.",
+      "image": "/images/project-1.png",
+      "url": "https://example.com",
+      "date": "2025-02-01",
+      "category": "Fullstack",
+      "featured": false
+    },
+    {
+      "id": 2,
+      "title": "SnapFeed",
+      "description": "A photo-sharing app with uploads, a feed, and social features.",
+      "image": "/images/project-2.png",
+      "url": "https://example.com",
+      "date": "2025-01-20",
+      "category": "Frontend",
+      "featured": true
+    },
+    {
+      "id": 3,
+      "title": "NoteNest",
+      "description": "A note-taking app with categories and local storage support.",
+      "image": "/images/project-3.png",
+      "url": "https://example.com",
+      "date": "2024-12-15",
+      "category": "Frontend",
+      "featured": true
+    },
+    {
+      "id": 4,
+      "title": "FitTrack",
+      "description": "A fitness tracker that logs workouts and progress visually.",
+      "image": "/images/project-4.png",
+      "url": "https://example.com",
+      "date": "2024-11-05",
+      "category": "Fullstack",
+      "featured": false
+    },
+    {
+      "id": 5,
+      "title": "CodeCritic",
+      "description": "A code snippet review tool with comments and upvotes.",
+      "image": "/images/project-5.png",
+      "url": "https://example.com",
+      "date": "2024-10-12",
+      "category": "Frontend",
+      "featured": false
+    },
+    {
+      "id": 6,
+      "title": "InspoQuote",
+      "description": "A daily inspiration quote generator with save/share options.",
+      "image": "/images/project-6.png",
+      "url": "https://example.com",
+      "date": "2024-09-28",
+      "category": "Fullstack",
+      "featured": false
+    },
+    {
+      "id": 7,
+      "title": "Blogify",
+      "description": "A minimalist blogging platform with Markdown and comments.",
+      "image": "/images/project-7.png",
+      "url": "https://example.com",
+      "date": "2024-09-01",
+      "category": "Fullstack",
+      "featured": false
+    }
+  ]
+}
