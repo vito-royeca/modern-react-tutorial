@@ -1,10 +1,11 @@
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
+
 import type { Route } from "./+types/index"
 import type { IProject } from './IProject';
-
 import Pagination from "./components/Pagination";
 import ProjectCard from "./components/ProjectCard";
-import { ca } from "date-fns/locale";
+import project from "~/routes/layouts/project";
 
 export async function loader({
     request
@@ -16,7 +17,7 @@ export async function loader({
 }
 
 const PortfolioPage = ({ loaderData }: Route.ComponentProps) => {
-    const projectsPerPage = 2;
+    const projectsPerPage = 10;
     const [selectedCategory, setSelectedCategory] = useState<string>('All');
     const [currentPage, setCurrentPage] = useState(1);
     const { projects } = loaderData as {projects: IProject[]};
@@ -54,13 +55,22 @@ const PortfolioPage = ({ loaderData }: Route.ComponentProps) => {
                     ))}
                 </div>  
 
-            <div className="grid gap-6 sm:grid-cols-2">
-                {currentProjects.map((project) => (
-                    <ProjectCard 
-                        key={project.id}
-                        project={project} />
-                ))}
-            </div>
+            <AnimatePresence
+                mode='wait'>
+                <motion.div
+                    layout
+                    className="grid gap-6 sm:grid-cols-2">
+                    {currentProjects.map((project) => (
+                        <motion.div
+                            layout
+                            key={project.id}
+                        >
+                            <ProjectCard 
+                                project={project} />
+                        </motion.div>
+                    ))}
+                </motion.div>
+            </AnimatePresence>
             <Pagination 
                 totalPages={totalPages}
                 currentPage={currentPage}
