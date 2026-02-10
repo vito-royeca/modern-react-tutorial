@@ -1,5 +1,17 @@
+import type { Route } from "./+types/index";
 import GridWrapper from "../../components/GridWrapper";
 
+export function meta({}: Route.MetaArgs) {
+    return [
+        { 
+            title: "Modern React From the Beginning - Class Projects | Welcome"
+        }, 
+        { 
+            name: "description",
+            content: "Learning React from the ground up along with modern environments such as React Router v7, TanStack, MERN, etc."
+      },
+  ];
+}
 
 function HomePage() {
     return (

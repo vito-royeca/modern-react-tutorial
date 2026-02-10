@@ -7,7 +7,7 @@ export async function loader({
     request,
     params
 }: Route.ClientLoaderArgs):Promise<IProject> {
-    const response = await fetch(`http://localhost:8001/projects/${params.id}`);
+    const response = await fetch(`http://localhost:8000/projects/${params.id}`);
 
     if (!response.ok) {
         throw new Response('Project not found', { status: 404 })

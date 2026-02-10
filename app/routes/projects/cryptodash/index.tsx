@@ -2,8 +2,21 @@ import { useEffect, useState } from 'react'
 
 import './style.css'
 import CoinList from './components/CoinList';
+import type { Route } from './+types';
 
 const API_URL = import.meta.env.VITE_COINS_API_URL;
+
+export function meta({}: Route.MetaArgs) {
+    return [
+        { 
+            title: "Crypto Dash - Modern React From the Beginning"
+        }, 
+        { 
+            name: "description",
+            content: "Crypto Dash"
+      },
+  ];
+}
 
 function CryptoDash() {
     const [coins, setCoins] = useState([]);

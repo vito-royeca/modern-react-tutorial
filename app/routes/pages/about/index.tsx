@@ -1,5 +1,18 @@
+import type { Route } from "./+types/index";
 import { Link } from 'react-router';
 import { FaFilePdf } from 'react-icons/fa';
+
+export function meta({}: Route.MetaArgs) {
+    return [
+        { 
+            title: "About - Modern React From the Beginning"
+        }, 
+        { 
+            name: "description",
+            content: "Learning React from the ground up along with modern environments such as React Router v7, TanStack, MERN, etc."
+      },
+  ];
+}
 
 const AboutPage = () => {
     return (

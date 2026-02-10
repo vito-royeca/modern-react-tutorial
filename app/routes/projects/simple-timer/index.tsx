@@ -1,5 +1,18 @@
+import type { Route } from './+types';
 import Timer from './components/Timer';
 import './style.css';
+
+export function meta({}: Route.MetaArgs) {
+    return [
+        { 
+            title: "Simple Timer - Modern React From the Beginning"
+        }, 
+        { 
+            name: "description",
+            content: "Simple Timer"
+      },
+  ];
+}
 
 const SimpleTimer = () => {
     return (

@@ -1,5 +1,18 @@
+import type { Route } from './+types';
 import Rating from './components/Rating';
 import './style.css';
+
+export function meta({}: Route.MetaArgs) {
+    return [
+        { 
+            title: "Rating UI - Modern React From the Beginning"
+        }, 
+        { 
+            name: "description",
+            content: "Rating UI"
+      },
+  ];
+}
 
 const RatingUI = () => {
     return (

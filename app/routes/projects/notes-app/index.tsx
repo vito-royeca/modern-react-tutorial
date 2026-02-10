@@ -1,10 +1,23 @@
 import { useState, useEffect } from "react";
 
+import type { Route } from './+types';
 import type { INote }  from "./INote.ts";
 import NoteForm from "./components/NoteForm";
 import NoteList from "./components/NoteList";
 
 import './style.css';
+
+export function meta({}: Route.MetaArgs) {
+    return [
+        { 
+            title: "Notes App - Modern React From the Beginning"
+        }, 
+        { 
+            name: "description",
+            content: "Notes App"
+      },
+  ];
+}
 
 const NotesApp = () => {
     const [notes, setNotes] = useState(() => {

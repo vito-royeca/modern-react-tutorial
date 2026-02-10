@@ -4,6 +4,7 @@ import type { IProject } from './IProject';
 
 import Pagination from "./components/Pagination";
 import ProjectCard from "./components/ProjectCard";
+import { ca } from "date-fns/locale";
 
 export async function loader({
     request
@@ -16,17 +17,42 @@ export async function loader({
 
 const PortfolioPage = ({ loaderData }: Route.ComponentProps) => {
     const projectsPerPage = 2;
-    const { projects } = loaderData as {projects: IProject[]};
+    const [selectedCategory, setSelectedCategory] = useState<string>('All');
     const [currentPage, setCurrentPage] = useState(1);
+    const { projects } = loaderData as {projects: IProject[]};
     
-    const totalPages = Math.ceil(projects.length / projectsPerPage);
+    const categories = ['All', ...new Set(projects.map(p => p.category))];
+    const filteredProjects = selectedCategory === 
+        'All' 
+        ? projects 
+        : projects.filter(p => p.category === selectedCategory);
+
+    const totalPages = Math.ceil(filteredProjects.length / projectsPerPage);
     const indexOfLast = currentPage * projectsPerPage;
     const indexOfFirst = indexOfLast - projectsPerPage;
-    const currentProjects = projects.slice(indexOfFirst, indexOfLast);
+    const currentProjects = filteredProjects.slice(indexOfFirst, indexOfLast);
 
     return ( 
         <>
             <h2 className='text-2xl text-white font-bold mb-8'>Portfolio</h2>
+                <div className="flex flex-wrap gap-2 mb-8">
+                    {categories.map(category => (
+                        <button 
+                            key={category}
+                            className={`px-3 py-1 rounded text-sm cursor-pointer ${
+                                selectedCategory === category 
+                                    ? 'bg-blue-600 text-white' 
+                                    : 'bg-gray-700 text-gray-200'
+                            }`}
+                            onClick={() => {
+                                setSelectedCategory(category)
+                                setCurrentPage(1);
+                            }}
+                        >
+                            {category}
+                        </button>
+                    ))}
+                </div>  
 
             <div className="grid gap-6 sm:grid-cols-2">
                 {currentProjects.map((project) => (

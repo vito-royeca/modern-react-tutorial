@@ -1,5 +1,7 @@
 import './style.css';
 
+import type { Route } from './+types';
+
 // Contexts
 import { CartProvider } from "./context/CartContext"
 import { ProductProvider } from "./context/ProductContext"
@@ -8,6 +10,17 @@ import { ProductProvider } from "./context/ProductContext"
 import Header from "./components/Header";
 import ProductList from './components/ProductList';
 
+export function meta({}: Route.MetaArgs) {
+    return [
+        { 
+            title: "Shopping Cart UI - Modern React From the Beginning"
+        }, 
+        { 
+            name: "description",
+            content: "Shopping Cart UI"
+      },
+  ];
+}
 const ShoppingCartUI = () => {
     return (
         <ProductProvider>
