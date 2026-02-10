@@ -4,7 +4,7 @@ import './style.css'
 import CoinList from './components/CoinList';
 import type { Route } from './+types';
 
-const API_URL = import.meta.env.VITE_COINS_API_URL;
+const CRYPTODASH_API_URL = import.meta.env.VITE_COINS_API_URL;
 
 export function meta({}: Route.MetaArgs) {
     return [
@@ -29,7 +29,7 @@ function CryptoDash() {
     useEffect(() => {
         const fetchCoins = async () => {
             try {
-                const response = await fetch(`${API_URL}&order=${sortBy}&per_page=${limit}&page=1&sparkline=false`);
+                const response = await fetch(`${CRYPTODASH_API_URL}&order=${sortBy}&per_page=${limit}&page=1&sparkline=false`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }

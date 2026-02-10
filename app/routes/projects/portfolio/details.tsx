@@ -3,11 +3,13 @@ import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import { Link } from "react-router";
 import type { IProject } from './IProject';
 
+const PORTFOLIO_API_URL = import.meta.env.VITE_PORTFOLIO_API_URL;
+
 export async function loader({
     request,
     params
 }: Route.ClientLoaderArgs):Promise<IProject> {
-    const response = await fetch(`http://localhost:8000/projects/${params.id}`);
+    const response = await fetch(`${PORTFOLIO_API_URL}/projects/${params.id}`);
 
     if (!response.ok) {
         throw new Response('Project not found', { status: 404 })

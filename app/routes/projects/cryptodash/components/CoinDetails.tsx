@@ -5,7 +5,7 @@ import { Link } from 'react-router';
 import CoinChart from './CoinChart';
 // import Spinner from '../../../components/Spinner';
 
-const API_URL = import.meta.env.VITE_COIN_API_URL;
+const CRYPTODASH_API_URL = import.meta.env.VITE_COIN_API_URL;
 
 const CoinDetails = () => {
     const { id } = useParams<{ id: string }>();
@@ -16,7 +16,7 @@ const CoinDetails = () => {
     useEffect(() => {
         const fetchCoin = async () => {
             try {
-                const response = await fetch(`${API_URL}/${id}`);
+                const response = await fetch(`${CRYPTODASH_API_URL}/${id}`);
                 if (!response.ok) {
                     throw new Error('Network response was not ok');
                 }

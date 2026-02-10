@@ -5,12 +5,13 @@ import type { Route } from "./+types/index"
 import type { IProject } from './IProject';
 import Pagination from "./components/Pagination";
 import ProjectCard from "./components/ProjectCard";
-import project from "~/routes/layouts/project";
+
+const PORTFOLIO_API_URL = import.meta.env.VITE_PORTFOLIO_API_URL;
 
 export async function loader({
     request
 }: Route.LoaderArgs):Promise<{projects: IProject[]}> {
-    const response = await fetch('http://localhost:8000/projects');
+    const response = await fetch(`${PORTFOLIO_API_URL}/projects`);
     const data = await response.json();
 
     return { projects: data };
