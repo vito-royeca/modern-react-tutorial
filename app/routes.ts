@@ -5,7 +5,9 @@ export default [
         index('routes/pages/home/index.tsx')
     ]),
     layout('./routes/layouts/normal.tsx', [
-        route('about', './routes/pages/about/index.tsx')
+        route('about', './routes/pages/about/index.tsx'),
+        route('contact-us', './routes/pages/contact-us/index.tsx'),
+        route('*', './routes/pages/errors/not-found.tsx'),
     ]),
     layout('./routes/layouts/project.tsx', [
         route('rating-ui', './routes/projects/rating-ui/index.tsx'),

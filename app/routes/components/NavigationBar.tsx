@@ -21,11 +21,6 @@ const NavigationBar = () => {
                         className="w3-bar-item w3-button w3-hide-small w3-hover-white">
                             <FaHome className='fa'/>
                     </Link>
-                    <Link
-                        to="/about"
-                        className="w3-bar-item w3-button w3-hide-small w3-hover-white">
-                            About
-                    </Link>
 
                     <div className="w3-dropdown-hover">
                         <button
@@ -65,6 +60,17 @@ const NavigationBar = () => {
                             </Link>
                         </div>
                     </div>
+
+                    <Link
+                        to="/about"
+                        className="w3-bar-item w3-button w3-hide-small w3-hover-white">
+                            About
+                    </Link>
+                    <Link
+                        to="/contact-us"
+                        className="w3-bar-item w3-button w3-hide-small w3-hover-white">
+                            Contact Us
+                    </Link>
                 </div>
 
                 {/* Navbar on small screens */}
@@ -81,6 +87,12 @@ const NavigationBar = () => {
                         className="w3-bar-item w3-button"
                         onClick={() => setSmallNavOpen(!smallNavOpen)}>
                             About
+                    </Link>
+                    <Link
+                        to="/contact-us"
+                        className="w3-bar-item w3-button"
+                        onClick={() => setSmallNavOpen(!smallNavOpen)}>
+                            Contact Us
                     </Link>
                 </div>
             </div>

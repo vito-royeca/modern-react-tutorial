@@ -17,6 +17,14 @@ type Pages = {
   "/about": {
     params: {};
   };
+  "/contact-us": {
+    params: {};
+  };
+  "/*": {
+    params: {
+      "*": string;
+    };
+  };
   "/rating-ui": {
     params: {};
   };
@@ -50,7 +58,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/about" | "/rating-ui" | "/notes-app" | "/simple-timer" | "/cryptodash" | "/cryptodash/:id" | "/shopping-cart-ui" | "/portfolio" | "/portfolio/:id";
+    page: "/" | "/about" | "/contact-us" | "/*" | "/rating-ui" | "/notes-app" | "/simple-timer" | "/cryptodash" | "/cryptodash/:id" | "/shopping-cart-ui" | "/portfolio" | "/portfolio/:id";
   };
   "./routes/layouts/home.tsx": {
     id: "routes/layouts/home";
@@ -62,11 +70,19 @@ type RouteFiles = {
   };
   "./routes/layouts/normal.tsx": {
     id: "routes/layouts/normal";
-    page: "/about";
+    page: "/about" | "/contact-us" | "/*";
   };
   "./routes/pages/about/index.tsx": {
     id: "routes/pages/about/index";
     page: "/about";
+  };
+  "./routes/pages/contact-us/index.tsx": {
+    id: "routes/pages/contact-us/index";
+    page: "/contact-us";
+  };
+  "./routes/pages/errors/not-found.tsx": {
+    id: "routes/pages/errors/not-found";
+    page: "/*";
   };
   "./routes/layouts/project.tsx": {
     id: "routes/layouts/project";
@@ -112,6 +128,8 @@ type RouteModules = {
   "routes/pages/home/index": typeof import("./app/routes/pages/home/index.tsx");
   "routes/layouts/normal": typeof import("./app/./routes/layouts/normal.tsx");
   "routes/pages/about/index": typeof import("./app/./routes/pages/about/index.tsx");
+  "routes/pages/contact-us/index": typeof import("./app/./routes/pages/contact-us/index.tsx");
+  "routes/pages/errors/not-found": typeof import("./app/./routes/pages/errors/not-found.tsx");
   "routes/layouts/project": typeof import("./app/./routes/layouts/project.tsx");
   "routes/projects/rating-ui/index": typeof import("./app/./routes/projects/rating-ui/index.tsx");
   "routes/projects/notes-app/index": typeof import("./app/./routes/projects/notes-app/index.tsx");

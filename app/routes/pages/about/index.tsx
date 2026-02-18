@@ -17,7 +17,9 @@ export function meta({}: Route.MetaArgs) {
 const AboutPage = () => {
     return (
         <>
-            <h1>About</h1>
+            <h2 className='text-3xl font-bold text-white mb-8 text-center'>
+                About
+            </h2>
             <div className="w3-content">
                 <p className="text-gray-500 p-2">
                     These are the completed class projects for the Udemy online course:&nbsp;
