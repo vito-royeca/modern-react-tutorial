@@ -14,6 +14,9 @@ type Pages = {
   "/": {
     params: {};
   };
+  "/blog": {
+    params: {};
+  };
   "/about": {
     params: {};
   };
@@ -58,7 +61,7 @@ type Pages = {
 type RouteFiles = {
   "root.tsx": {
     id: "root";
-    page: "/" | "/about" | "/contact-us" | "/*" | "/rating-ui" | "/notes-app" | "/simple-timer" | "/cryptodash" | "/cryptodash/:id" | "/shopping-cart-ui" | "/portfolio" | "/portfolio/:id";
+    page: "/" | "/blog" | "/about" | "/contact-us" | "/*" | "/rating-ui" | "/notes-app" | "/simple-timer" | "/cryptodash" | "/cryptodash/:id" | "/shopping-cart-ui" | "/portfolio" | "/portfolio/:id";
   };
   "./routes/layouts/home.tsx": {
     id: "routes/layouts/home";
@@ -70,7 +73,11 @@ type RouteFiles = {
   };
   "./routes/layouts/normal.tsx": {
     id: "routes/layouts/normal";
-    page: "/about" | "/contact-us" | "/*";
+    page: "/blog" | "/about" | "/contact-us" | "/*";
+  };
+  "./routes/pages/blog/index.tsx": {
+    id: "routes/pages/blog/index";
+    page: "/blog";
   };
   "./routes/pages/about/index.tsx": {
     id: "routes/pages/about/index";
@@ -127,6 +134,7 @@ type RouteModules = {
   "routes/layouts/home": typeof import("./app/./routes/layouts/home.tsx");
   "routes/pages/home/index": typeof import("./app/routes/pages/home/index.tsx");
   "routes/layouts/normal": typeof import("./app/./routes/layouts/normal.tsx");
+  "routes/pages/blog/index": typeof import("./app/./routes/pages/blog/index.tsx");
   "routes/pages/about/index": typeof import("./app/./routes/pages/about/index.tsx");
   "routes/pages/contact-us/index": typeof import("./app/./routes/pages/contact-us/index.tsx");
   "routes/pages/errors/not-found": typeof import("./app/./routes/pages/errors/not-found.tsx");

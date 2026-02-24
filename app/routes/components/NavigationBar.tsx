@@ -16,6 +16,7 @@ const NavigationBar = () => {
                         onClick={() => setSmallNavOpen(!smallNavOpen)}>
                         <FaBars className='fa'/>
                     </button>
+
                     <Link
                         to="/"
                         className="w3-bar-item w3-button w3-hide-small w3-hover-white">
@@ -62,6 +63,12 @@ const NavigationBar = () => {
                     </div>
 
                     <Link
+                        to="/blog"
+                        className="w3-bar-item w3-button w3-hide-small w3-hover-white">
+                            Blog
+                    </Link>
+
+                    <Link
                         to="/about"
                         className="w3-bar-item w3-button w3-hide-small w3-hover-white">
                             About
@@ -69,7 +76,7 @@ const NavigationBar = () => {
                     <Link
                         to="/contact-us"
                         className="w3-bar-item w3-button w3-hide-small w3-hover-white">
-                            Contact Us
+                            Contact
                     </Link>
                 </div>
 

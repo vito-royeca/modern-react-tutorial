@@ -21,7 +21,7 @@ const AboutPage = () => {
                 About
             </h2>
             <div className="w3-content">
-                <p className="text-gray-500 p-2">
+                <p className="text-gray-300 mt-2">
                     These are the completed class projects for the Udemy online course:&nbsp;
                     <Link
                         to='https://www.udemy.com/course/modern-react-from-the-beginning/'
@@ -32,10 +32,10 @@ const AboutPage = () => {
                     </Link>
                     .
                 </p>
-                <p className="text-gray-500 p-2">
+                <p className="text-gray-300 mt-2">
                     View the certificate obtained from completing this course:
                 </p>
-                <p className="text-gray-500 p-2">
+                <p className="text-gray-300 mt-4">
                     <Link 
                         to='/UC-e61ed28d-2af8-46de-ba76-c04745109b09.pdf'
                         target='_blank'>
