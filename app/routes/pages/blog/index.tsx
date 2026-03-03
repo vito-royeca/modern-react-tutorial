@@ -1,8 +1,22 @@
-import type { Route } from "./+types/index";
-import { Link } from "react-router";
-import { FaArrowRight } from "react-icons/fa6";
+import { useState } from 'react';
 
+import type { Route } from "./+types/index";
 import type { IPost } from "./IPost";
+import PostCard from "./components/PostCard";
+import PostFilter from './components/PostFilter';
+import Pagination from '../../projects/portfolio/components/Pagination';
+
+export function meta({}: Route.MetaArgs) {
+    return [
+        { 
+            title: "Blog - Modern React From the Beginning"
+        }, 
+        { 
+            name: "description",
+            content: "Blog posts for Modern React From the Beginning"
+      },
+  ];
+}
 
 export async function loader({ request }: Promise<Route.LoaderArgs>): Promise<{posts: IPost[]}> {
     const url = new URL('/posts-meta.json', request.url);
@@ -13,35 +27,62 @@ export async function loader({ request }: Promise<Route.LoaderArgs>): Promise<{p
     }
 
     const data = await response.json();
+    data.sort((a: IPost, b: IPost) => {
+        return new Date(b.date).getTime() - new Date(a.date).getTime();
+    });
+
     return { posts: data };
 }
 
 const BlogPage = ({ loaderData }: Route.ComponentProps) => {
+    const postsPerPage = 3;
+    const [searchQuery, setSearchQuery] = useState('');
+    const [currentPage, setCurrentPage] = useState(1);
     const { posts } = loaderData;
+    const filteredPosts = posts.filter((post) => {
+        const query = searchQuery.toLowerCase();
+        return (
+            post.title.toLowerCase().includes(query) ||
+            post.excerpt.toLowerCase().includes(query)
+        );
+    })
+
+    const totalPages = Math.ceil(filteredPosts.length / postsPerPage);
+    const indexOfLast = currentPage * postsPerPage;
+    const indexOfFirst = indexOfLast - postsPerPage;
+    const currentPosts = filteredPosts.slice(indexOfFirst, indexOfLast);
 
     return ( 
         <>
             <h2 className='text-3xl font-bold text-white mb-8 text-center'>
                 Blog
             </h2>
-            {posts.map((post: IPost) => (
-                <article
-                    key={post.slug}
-                    className="bg-gray-800 p-6 rounded-lg shadow mb-4"
-                >
-                    <h3 className="text-2xl font-semibold text-blue-400">
-                        { post.title }
-                    </h3>
-                    <p className="text-sm text-gray-400 mb-2">{ new Date(post.date).toLocaleDateString()}</p>
-                    <p className="text-gray-300 mb-4">{post.excerpt}</p>
-                    <Link
-                        to={`/blog/${post.slug}`}
-                        className="text-blue-300 text-sm hover:underline"
-                    >
-                        Read more <FaArrowRight className="fa" />
-                    </Link>    
-                </article>
-            ))}
+
+            <PostFilter
+                searchQuery={ searchQuery }
+                onSearchChange={(query) => {
+                    setSearchQuery(query);
+                    setCurrentPage(1);
+                }}
+            />
+            <div className="space-y-8">
+                {currentPosts.length === 0 ? (
+                    <p className="text-gray-400 text-center">
+                        No posts found.
+                    </p>
+                ) : currentPosts.map((post: IPost) => (
+                    <PostCard 
+                        key={post.slug}
+                        post={post} />
+                ))}
+            </div>
+            {}
+
+            <Pagination 
+                totalPages={totalPages}
+                currentPage={currentPage}
+                onPageChange={setCurrentPage}
+            />
         </>
     );
 }

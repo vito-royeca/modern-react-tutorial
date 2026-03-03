@@ -6,6 +6,7 @@ export default [
     ]),
     layout('./routes/layouts/normal.tsx', [
         route('blog', './routes/pages/blog/index.tsx'),
+        route('blog/:slug', './routes/pages/blog/details.tsx'),
         route('about', './routes/pages/about/index.tsx'),        
         route('contact-us', './routes/pages/contact-us/index.tsx'),
         route('*', './routes/pages/errors/not-found.tsx'),
